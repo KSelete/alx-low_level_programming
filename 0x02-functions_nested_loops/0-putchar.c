@@ -1,3 +1,4 @@
+#include "main.h"
 /**
 * main - Start process
 * Return: Always 0
