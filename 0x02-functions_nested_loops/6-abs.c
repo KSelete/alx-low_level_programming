@@ -2,13 +2,17 @@
 #include <stdlib.h>
 
 /**
- * _abs - check absolut value of integer
+ * _abs - check absolute value of integer
  * @r: number to be checked
  * Return: Always 0
  */
 int _abs(int r)
 {
 	if (r > 0)
+	{
+		return (r);
+	}
+	else if (r < 0)
 	{
 		return (r * -1);
 	}
