@@ -1,9 +1,8 @@
-#include"main.h"
-
+#include "main.h"
 /**
- * print line - prints _ n times
- *@n: the number of lines to draw
- *Return: void
+ * print_line - prints line
+ * @n: the number of lines to draw
+ * Return: empty
  */
 
 void print_line(int n)
@@ -20,5 +19,6 @@ void print_line(int n)
 	}
 	else
 	{
-		_putchar('\n');
+		_putchar('\n')
+	}
 }
