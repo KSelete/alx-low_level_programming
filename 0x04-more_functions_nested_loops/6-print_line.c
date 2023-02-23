@@ -1,19 +1,24 @@
 #include"main.h"
 
 /**
- * print_line -check for a digit
- * @n: number of _ to be printed
- * Return: void
+ * print line - prints _ n times
+ *@n: the number of lines to draw
+ *Return: void
  */
 
 void print_line(int n)
 {
-	int i = 0;
+	int x;
 
-	while (i < n && n > 0)
+	if (n > 0)
 	{
-		_puthar('_');
-		i++;
+		for (i = 0; i < n; i++)
+		{
+			_putchar('_');
+		}
+		_putchar('\n');
 	}
-	_putchar('\n');
+	else
+	{
+		_putchar('\n');
 }
