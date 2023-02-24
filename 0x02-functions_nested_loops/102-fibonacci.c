@@ -1,4 +1,4 @@
-#include<stduio.h>
+#include <stduio.h>
 /**
  * main - Print sum of all multiples of 3 or 5 upto 1024
  * Return: Always 0
