@@ -3,11 +3,8 @@
 
 /**
  * add - add two numbers
- *
  * @a: first number
- *
- * @b: second number
- *
+ * @b: second number *
  * Return: sum of two numbers
  */
 
