@@ -2,10 +2,8 @@
 #include<stdlib.h>
 
 /**
- * print_times_table - times table for n
- *
+ * print_times_table - times table for n *
  * @n: value of table to be printed starting from 0
- *
  * Return: void
  */
 
