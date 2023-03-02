@@ -4,7 +4,7 @@
  * _strcat - function that concatenates two strings
  * appends the src string to the dest string,
  * overwriting the terminating null byte (\0) at the end of dest
- * code by ArchibaldTK
+ * code by KSelete
  * @dest: the input value
  * @src: the input value
  * Return: 0
@@ -16,7 +16,7 @@ char *_strcat(char *dest, char *src)
 	int j;
 
 	i = 0;
-	while (dest[i] != '0')
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
