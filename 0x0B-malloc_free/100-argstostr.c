@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-/*
+/**
  * argstostr - concatenates all the arguments of a program.
  * @ac: argument count.
  * @av: argument vector.
@@ -21,6 +21,7 @@ char *argstostr(int ac, char **av)
 			return (NULL);
 		for (j = 0; av[i][j] != '\0'; j++)
 			c++;
+		c++;
 	}
 	aout = malloc((c + 1) * sizeof(char));
 	if (aout == NULL)

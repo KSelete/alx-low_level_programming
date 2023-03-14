@@ -44,12 +44,13 @@ char **strtow(char *str)
 		for (c = a1; str[c] != '\0'; c++)
 		{
 			if (str[c] == ' ')
-				al++;
+				a1++;
 			if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 			{
 				aout[i] = malloc((c - a1 + 2) * sizeof(char));
 				if (aout[i] == NULL)
 				{
+
 					ch_free_grid(aout, i);
 					return (NULL);
 				}
