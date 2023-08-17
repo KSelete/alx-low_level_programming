@@ -8,8 +8,10 @@
  * Return: void
  */
 void array_iterator(int *array, size_t size, void (*action)(int));
+
 {
 	unsigned int n;
+
 	if (array == NULL || action == NULL)
 		return;
 
