@@ -6,7 +6,7 @@
  *
  * Return: always = 0
  */
-int main(voi)
+int main(void)
 {
 	struct dog my_dog;
 
