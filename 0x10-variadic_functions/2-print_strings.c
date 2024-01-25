@@ -2,9 +2,9 @@
 
 /**
  * print_strings - Print numbers using a specified separator
- * @param separator: The string used as a separator
- * @param n: The quantity of numbers
- * @param ...: The list of numbers to be printed
+ * @separator: The string used as a separator
+ * @n: The quantity of numbers
+ * @..: The list of numbers to be printed
  *
  * Return: nothing
  */
@@ -20,6 +20,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (c = 0; c < n; c++)
 	{
 		word = va_arg(my_list, char *);
+
 		if (word == NULL)
 		{
 			printf("(nil)");
@@ -34,4 +35,3 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_end(my_list);
 	printf("\n");
 }
-
