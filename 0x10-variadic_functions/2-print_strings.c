@@ -7,6 +7,7 @@
  * @separator: The string to be printed between the strings
  * @n: The number of strings passed to the function
  * ...: The cariable number of strings
+ * Return: void
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
