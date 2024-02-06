@@ -18,6 +18,9 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		current = current->next;
 	}
 
-	return current; /* Return the node at the desired index */
+	if (i < index) /* Check if the index is out of bounds */
+		return (NULL);
+
+	return (current); /* Return the node at the desired index */
 }
 
