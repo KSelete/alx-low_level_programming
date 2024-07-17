@@ -1,56 +1,51 @@
 #include "search_algos.h"
-#include <stdio.h>
 
 /**
- * print_array - Prints an array of integers
- * @array: The array to be printed
- * @left: The starting index of the array to be printed
- * @right: The ending index of the array to be printed
+ * print_array - print an array
+ * @array: the array to print
+ * @l: this is left index
+ * @r: this is right index
  */
-void print_array(int *array, size_t left, size_t right)
+void print_array(int *array, int l, int r)
 {
-    size_t i;
+	int i;
 
-    printf("Searching in array: ");
-    for (i = left; i <= right; i++)
-    {
-        printf("%d", array[i]);
-        if (i < right)
-            printf(", ");
-    }
-    printf("\n");
+	for (i = l; i <= r; i++)
+	{
+		printf("%d", array[i]);
+		if (i < r)
+			printf(", ");
+	}
+	printf("\n");
 }
 
 /**
- * binary_search - Searches for a value in a sorted array of
- * integers using the Binary search algorithm
- *
- * @array: input array
+ * binary_search - search for an element in an array
+ * @array: the array we want to search in
  * @size: size of the array
- * @value: value to search in
- * Return: index of the value, or -1 if not found
+ * @value: the target value
+ * Return: the index of the value or -1 if not found
  */
 int binary_search(int *array, size_t size, int value)
 {
-    size_t left = 0;
-    size_t right = size - 1;
-    size_t mid;
+	int l = 0, r = size - 1, m;
 
-    if (array == NULL)
-        return (-1);
+	if (!array || size == 0)
+		return (-1);
 
-    while (left <= right)
-    {
-        print_array(array, left, right);
-        mid = left + (right - left) / 2;
+	while (l <= r)
+	{
+		printf("Searching in array: ");
+		print_array(array, l, r);
+		m = l + (r - l) / 2;
 
-        if (array[mid] == value)
-            return (mid);
-        else if (array[mid] < value)
-            left = mid + 1;
-        else
-            right = mid - 1;
-    }
+		if (array[m] > value)
+			r = m - 1;
+		else if (array[m] < value)
+			l = m + 1;
+		else
+			return (m);
+	}
 
-    return (-1);
+	return (-1);
 }
