@@ -1,50 +1,48 @@
 #include "search_algos.h"
-#include <math.h>
 
 /**
- * jump_list - searches for a value in an array of
- * integers using the Jump search algorithm
- *
- * @list: input list
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
+ * jump_list - this function searches for a value in a sorted array of integers
+ *				using the Jump search algorithm
+ * @list: pointer to the head of the list
+ * @size: size of list
+ * @value: int value we are looking for
+ * Return: Null or value index pointer
  */
-listint_t *jump_list(listint_t *arr, size_t len, int val)
+listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t step, idx, block_size;
-	listint_t *prev_node;
+	size_t j, i;
+	listint_t *l, *r;
 
-	if (arr == NULL || len == 0)
+	if (list == NULL || size == 0)
 		return (NULL);
 
-	block_size = (size_t)sqrt((double)len);
-	step = 0;
-	idx = 0;
-
-	do {
-		prev_node = arr;
-		step++;
-		idx = step * block_size;
-
-		while (arr->next && arr->index < idx)
-			arr = arr->next;
-
-		if (arr->next == NULL && idx != arr->index)
-			idx = arr->index;
-
-		printf("Value checked at index [%d] = [%d]\n", (int)idx, arr->n);
-
-	} while (idx < len && arr->next && arr->n < val);
-
-	printf("Value found between indexes ");
-	printf("[%d] and [%d]\n", (int)prev_node->index, (int)arr->index);
-
-	for (; prev_node && prev_node->index <= arr->index; prev_node = prev_node->next)
+	l = list;
+	j = sqrt(size);
+	r = l;
+	while (1)
 	{
-		printf("Value checked at index [%d] = [%d]\n", (int)prev_node->index, prev_node->n);
-		if (prev_node->n == val)
-			return (prev_node);
+
+		for (i = 0; i < j && r; i++)
+		{
+			if (r->next)
+				r = r->next;
+		}
+		printf("Value checked at index [%ld] = [%d]\n", r->index, r->n);
+		if (r->index == size - 1 || r->n >= value)
+			break;
+		else if (r->n < value)
+			l = r;
+	}
+	printf("Value found between indexes [%ld] and [%ld]\n", l->index, r->index);
+	while (1)
+	{
+		printf("Value checked at index [%ld] = [%d]\n", l->index, l->n);
+		if (l->n == value)
+			return (l);
+		if (r == l)
+			break;
+		if (l->next)
+			l = l->next;
 	}
 
 	return (NULL);

@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * linear_skip - searches for a value in a skip list
+ * linear_skip - this function searches for a value in a skip list
  *
  * @list: input list
  * @value: value to search in
